@@ -6,7 +6,7 @@
 -- Létrehozás ideje: 2026. Ápr 27. 14:37
 -- Kiszolgáló verziója: 10.4.28-MariaDB
 -- PHP verzió: 8.2.4
-
+CREATE DATABASE filmek
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
