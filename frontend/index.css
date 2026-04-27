@@ -1,0 +1,32 @@
+ul {
+  list-style: none;
+}
+.moviecon,
+.moviescon {
+  display: flex;
+  flex-direction: column;
+}
+.top {
+  display: flex;
+  flex-direction: row;
+}
+.bot {
+  display: flex;
+  flex-direction: column;
+}
+.maininfo {
+  display: flex;
+  flex-direction: column;
+}
+.info {
+  display: inline-flex;
+  padding-left: 0px;
+}
+.moreinfo {
+  display: flex;
+}
+.moviespad {
+  padding: 0.75rem;
+  border: 1px solid rgba(160, 160, 160, 0.4);
+  border-radius: 4px;
+}
