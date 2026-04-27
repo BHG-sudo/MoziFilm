@@ -1,10 +1,22 @@
 ul {
   list-style: none;
 }
+h1 {
+  text-align: center;
+}
+nav {
+  text-align: center;
+  justify-content: center;
+}
 .moviecon,
 .moviescon {
   display: flex;
   flex-direction: column;
+}
+.moviescon {
+  margin: auto;
+  width: fit-content;
+  justify-content: center;
 }
 .top {
   display: flex;
@@ -21,12 +33,29 @@ ul {
 .info {
   display: inline-flex;
   padding-left: 0px;
+  color: grey;
+  padding-bottom: 10px;
 }
 .moreinfo {
   display: flex;
+  color: grey;
 }
 .moviespad {
   padding: 0.75rem;
   border: 1px solid rgba(160, 160, 160, 0.4);
   border-radius: 4px;
+}
+.moviespad > li + li {
+  border-top: 1px solid rgba(160, 160, 160, 0.4);
+}
+.cover {
+  padding-right: 10px;
+}
+.name {
+  padding-bottom: 5px;
+  font-weight: bold;
+}
+li {
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
