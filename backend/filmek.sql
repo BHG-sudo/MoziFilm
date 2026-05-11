@@ -44,6 +44,7 @@ CREATE TABLE `meta_adat` (
 
 INSERT INTO `meta_adat` (`id`, `borito`, `cim`, `rendezo`, `kiadas`, `mufaj`, `ido`) VALUES
 (0, 'https://www.imdb.com/title/tt1016150/mediaviewer/rm3081122561/?ref_=tt_ov_i', 'Nyugaton A Helyzet Változatlan', 'Edward Berger', '2022-10-28', 'Dráma, Háborús Dráma', '02:27:00'),
+(1, 'https://www.imdb.com/title/tt0417072/mediaviewer/rm3739614720/?ref_=tt_ov_i', 'R-Pont - A Halál Zóna', 'Su-chang Kong', '2004-08-13', 'Háborús Dráma, Horror', '01:47:00'),
 (2, 'https://www.imdb.com/title/tt1727824/mediaviewer/rm2041870080/?ref_=tt_ov_i', 'Bohém Rapszódia', 'Bryan Singer', '2018-10-26', 'Életrajzi film, Dráma', '02:14:00'),
 (3, 'https://www.imdb.com/title/tt1856101/mediaviewer/rm2677875712/?ref_=tt_ov_i', 'Szárnyas fejvadász 2049', 'Denis Villeneuve', '2017-10-05', 'Sci-Fi, Dráma', '02:44:00'),
 (4, 'https://www.imdb.com/title/tt0137523/mediaviewer/rm1482334722/?ref_=tt_ov_i', 'Harcosok Klubja', 'David Fincher', '2000-01-27', 'Thiller, Dráma', '02:19:00'),
