@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Máj 11. 10:42
+-- Létrehozás ideje: 2026. Ápr 27. 14:37
 -- Kiszolgáló verziója: 10.4.28-MariaDB
 -- PHP verzió: 8.2.4
 
@@ -22,41 +22,12 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `filmek` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
 USE `filmek`;
-
--- --------------------------------------------------------
-
---
--- Tábla szerkezet ehhez a táblához `felhasznalok`
---
-
-DROP TABLE IF EXISTS `felhasznalok`;
-CREATE TABLE `felhasznalok` (
-  `id` int(255) NOT NULL,
-  `nev` varchar(1000) NOT NULL,
-  `jelszo` varchar(1000) NOT NULL,
-  `email` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
-
--- --------------------------------------------------------
-
---
--- Tábla szerkezet ehhez a táblához `film_listak`
---
-
-DROP TABLE IF EXISTS `film_listak`;
-CREATE TABLE `film_listak` (
-  `filmekID` int(255) NOT NULL,
-  `felhasznalokID` int(255) NOT NULL,
-  `id` int(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
-
 -- --------------------------------------------------------
 
 --
 -- Tábla szerkezet ehhez a táblához `meta_adat`
 --
 
-DROP TABLE IF EXISTS `meta_adat`;
 CREATE TABLE `meta_adat` (
   `id` int(100) NOT NULL,
   `borito` varchar(1000) NOT NULL,
@@ -92,7 +63,7 @@ INSERT INTO `meta_adat` (`id`, `borito`, `cim`, `rendezo`, `kiadas`, `mufaj`, `i
 (18, 'https://www.imdb.com/title/tt0816692/mediaviewer/rm3520863489/?ref_=tt_ov_i', 'Csillagok között', 'Christopher Nolan', '2014-11-06', 'Sci-Fi, Dráma', '02:49:00'),
 (19, 'https://www.imdb.com/title/tt0073650/mediaviewer/rm3506135297/?ref_=tt_ov_i', 'Saló: avagy Szodoma 120 napja', 'Pier Paolo Pasolini', '1995-03-08', 'Tragédia, Dráma', '02:00:00'),
 (20, 'https://www.imdb.com/title/tt0066921/mediaviewer/rm1351407872/?ref_=tt_ov_i', 'Mechanikus Narancs', 'Stanley Kubrick', '1971-03-08', 'Sötét Komédia, Disztópikus Sci-Fi', '02:16:00'),
-(21, 'https://www.imdb.com/title/tt0225009/mediaviewer/rm894095873/?ref_=tt_ov_i', '964 Pinocchio', 'Shozin Fukui', '1991-09-14', 'Horror, Sci-Fi', '01:37:00'),
+(21, 'https://www.imdb.com/title/tt0225009/mediaviewer/rm894095873/?ref_=tt_ov_i', '964 Pinocchio', 'Shozin Fukui', '1991-09-14', 'Horror, Disztópikus Sci-Fi', '01:37:00'),
 (22, 'https://www.imdb.com/title/tt0418763/mediaviewer/rm3466395904/?ref_=tt_ov_i', 'Bőrnyakúak', 'Sam Mendes', '2005-01-05', 'Sötét Komédia, Háborús Dráma', '02:05:00'),
 (23, 'https://www.imdb.com/title/tt0185906/mediaviewer/rm1952109570/?ref_=tt_ov_i', 'Az Elit Alakulat', 'Tom Hanks', '2001-09-09', 'Akció, Háborús Dráma', '00:00:00'),
 (24, 'https://www.imdb.com/title/tt0076759/mediaviewer/rm4007647745/?ref_=tt_ov_i', 'Csillagok Háborúja: Egy Új Remény', 'George Lucas', '1977-08-16', 'Sci-Fi, Akció', '02:01:00'),
@@ -106,18 +77,6 @@ INSERT INTO `meta_adat` (`id`, `borito`, `cim`, `rendezo`, `kiadas`, `mufaj`, `i
 --
 
 --
--- A tábla indexei `felhasznalok`
---
-ALTER TABLE `felhasznalok`
-  ADD PRIMARY KEY (`id`);
-
---
--- A tábla indexei `film_listak`
---
-ALTER TABLE `film_listak`
-  ADD PRIMARY KEY (`id`);
-
---
 -- A tábla indexei `meta_adat`
 --
 ALTER TABLE `meta_adat`
@@ -128,22 +87,10 @@ ALTER TABLE `meta_adat`
 --
 
 --
--- AUTO_INCREMENT a táblához `felhasznalok`
---
-ALTER TABLE `felhasznalok`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT a táblához `film_listak`
---
-ALTER TABLE `film_listak`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT a táblához `meta_adat`
 --
 ALTER TABLE `meta_adat`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

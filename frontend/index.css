@@ -5,11 +5,31 @@ h1 {
   text-align: center;
 }
 nav {
-  text-align: center;
+  background-color: black;
+  margin: 0px;
+  height: 32px;
+  color: aliceblue;
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+#crapton {
+  background-color: grey;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body,
+h1,
+p {
+  margin: 0px;
 }
 .moviecon,
-.moviescon {
+.moviescon,
+.maininfo,
+.bot {
   display: flex;
   flex-direction: column;
 }
@@ -21,14 +41,6 @@ nav {
 .top {
   display: flex;
   flex-direction: row;
-}
-.bot {
-  display: flex;
-  flex-direction: column;
-}
-.maininfo {
-  display: flex;
-  flex-direction: column;
 }
 .info {
   display: inline-flex;
@@ -47,6 +59,9 @@ nav {
 }
 .moviespad > li + li {
   border-top: 1px solid rgba(160, 160, 160, 0.4);
+}
+.moviespad {
+  background-color: aliceblue;
 }
 .cover {
   padding-right: 10px;
