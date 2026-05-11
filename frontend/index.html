@@ -2,138 +2,32 @@
 <html lang="hu">
 
 <head>
+    <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Film lista</title>
+    <title>Bejelentkezés</title>
+    <style>
+        fieldset {
+            height: 210px;
+        }
+
+        #anyad {
+            font-size: small;
+        }
+    </style>
 </head>
 
 <body>
-    <nav id="header">
-        <div>
-            <p>Létezik</p>
-        </div>
-    </nav>
-    <main role="main">
-        <div id="crapton">
-            <h1>Film figyelő</h1>
-        </div>
-        <div>
-            <div id="stat" class="stat"></div>
-            <div class="moviescon">
-                <ul class="moviespad">
-                    <li>
-                        <div class="moviecon">
-                            <div class="top">
-                                <div class="cover">KÉP</div>
-                                <div class="maininfo">
-                                    <div class="name">VALAMI</div>
-                                    <div>
-                                        <ul class="info">
-                                            <li class="date">2020</li>
-                                            <li class="time">1h26m</li>
-                                            <li class="korhatar">R</li>
-                                        </ul>
-                                    </div>
-                                    <span class="moreinfo">
-                                        <div>
-                                            <span class="rating">5/4.5</span>
-                                            <button>Értékelés</button>
-                                        </div>
-                                        <button>Tervezett</button>
-                                    </span>
-                                </div>
-                            </div>
-                            <div id="bot">
-                                <div id="description">jkbvbhhjvav jhbjhabbhlvrlbh bhhblab vhkrbviEBVKHBEKHBVKEBVHBEKHB
-                                </div>
-                                <span>
-                                    <span>
-                                        <span>Directors</span>
-                                    </span>
-                                    <span>
-                                        <span>Stars</span>
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="moviecon">
-                            <div class="top">
-                                <div class="cover">KÉP</div>
-                                <div class="maininfo">
-                                    <div class="name">VALAMI</div>
-                                    <div>
-                                        <ul class="info">
-                                            <li class="date">2020</li>
-                                            <li class="time">1h26m</li>
-                                            <li class="korhatar">R</li>
-                                        </ul>
-                                    </div>
-                                    <span class="moreinfo">
-                                        <div>
-                                            <span class="rating">5/4.5</span>
-                                            <button>Értékelés</button>
-                                        </div>
-                                        <button>Tervezett</button>
-                                    </span>
-                                </div>
-                            </div>
-                            <div id="bot">
-                                <div id="description">jkbvbhhjvav jhbjhabbhlvrlbh bhhblab vhkrbviEBVKHBEKHBVKEBVHBEKHB
-                                </div>
-                                <span>
-                                    <span>
-                                        <span>Directors</span>
-                                    </span>
-                                    <span>
-                                        <span>Stars</span>
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="moviecon">
-                            <div class="top">
-                                <div class="cover">KÉP</div>
-                                <div class="maininfo">
-                                    <div class="name">VALAMI</div>
-                                    <div>
-                                        <ul class="info">
-                                            <li class="date">2020</li>
-                                            <li class="time">1h26m</li>
-                                            <li class="korhatar">R</li>
-                                        </ul>
-                                    </div>
-                                    <span class="moreinfo">
-                                        <div>
-                                            <span class="rating">5/4.5</span>
-                                            <button>Értékelés</button>
-                                        </div>
-                                        <button>Tervezett</button>
-                                    </span>
-                                </div>
-                            </div>
-                            <div id="bot">
-                                <div id="description">jkbvbhhjvav jhbjhabbhlvrlbh bhhblab vhkrbviEBVKHBEKHBVKEBVHBEKHB
-                                </div>
-                                <span>
-                                    <span>
-                                        <span>Directors</span>
-                                    </span>
-                                    <span>
-                                        <span>Stars</span>
-                                    </span>
-                                </span>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
+    <h1>Bejelentkezés</h1>
+    <form action="../backend/bejelentk.php" method="post">
+        <fieldset>
+            <div id="sha">
+                <input type="text" id="nev" name="nev" placeholder="Felhasználó név" required>
+                <input type="password" id="jelszo" name="jelszo" placeholder="Jelszó" required>
+                <a href="../frontend/regiszt.html">Regisztráció</a>
+                <button>Bejelentkezés</button>
             </div>
-        </div>
-    </main>
-</body>
+        </fieldset>
+    </form>
 
 </html>
