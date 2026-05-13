@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Ápr 27. 14:37
+-- Létrehozás ideje: 2026. Máj 13. 10:24
 -- Kiszolgáló verziója: 10.4.28-MariaDB
 -- PHP verzió: 8.2.4
 
@@ -20,8 +20,48 @@ SET time_zone = "+00:00";
 --
 -- Adatbázis: `filmek`
 --
-CREATE DATABASE IF NOT EXISTS `filmek` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
-USE `filmek`;
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `felhasznalok`
+--
+
+CREATE TABLE `felhasznalok` (
+  `id` int(100) NOT NULL,
+  `nev` varchar(100) NOT NULL,
+  `jelszo` varchar(100) NOT NULL,
+  `email` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `felhasznalok`
+--
+
+INSERT INTO `felhasznalok` (`id`, `nev`, `jelszo`, `email`) VALUES
+(1, 'valai', 'valai', 'valai@valai.valai'),
+(2, 'valai', 'valai', 'valai@valai.valai');
+
+-- --------------------------------------------------------
+
+--
+-- Tábla szerkezet ehhez a táblához `film_listak`
+--
+
+CREATE TABLE `film_listak` (
+  `id` int(100) NOT NULL,
+  `filmID` int(100) NOT NULL,
+  `felhasznaloID` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_hungarian_ci;
+
+--
+-- A tábla adatainak kiíratása `film_listak`
+--
+
+INSERT INTO `film_listak` (`id`, `filmID`, `felhasznaloID`) VALUES
+(1, 1, 2),
+(2, 1, 2);
+
 -- --------------------------------------------------------
 
 --
@@ -77,6 +117,19 @@ INSERT INTO `meta_adat` (`id`, `borito`, `cim`, `rendezo`, `kiadas`, `mufaj`, `i
 --
 
 --
+-- A tábla indexei `felhasznalok`
+--
+ALTER TABLE `felhasznalok`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- A tábla indexei `film_listak`
+--
+ALTER TABLE `film_listak`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `filmID` (`filmID`,`felhasznaloID`);
+
+--
 -- A tábla indexei `meta_adat`
 --
 ALTER TABLE `meta_adat`
@@ -87,10 +140,32 @@ ALTER TABLE `meta_adat`
 --
 
 --
+-- AUTO_INCREMENT a táblához `felhasznalok`
+--
+ALTER TABLE `felhasznalok`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT a táblához `film_listak`
+--
+ALTER TABLE `film_listak`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT a táblához `meta_adat`
 --
 ALTER TABLE `meta_adat`
   MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
+
+--
+-- Megkötések a kiírt táblákhoz
+--
+
+--
+-- Megkötések a táblához `film_listak`
+--
+ALTER TABLE `film_listak`
+  ADD CONSTRAINT `film_listak_ibfk_1` FOREIGN KEY (`filmID`) REFERENCES `meta_adat` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
