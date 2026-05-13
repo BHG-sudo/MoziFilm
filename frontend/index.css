@@ -1,39 +1,43 @@
-body {
-    background-color: mediumseagreen;
-  }
-  h1 {
-    font-size: 60px;
-    text-align: center;
-    font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-    color: crimson;
-  }
-  #sha {
-    margin-left: auto;
-    margin-right: auto;
-    width: 200px;
-    padding: 10px;
-    padding: 15px;
-  }
-  fieldset {
-    background-color: rgb(97, 212, 149);
-    width: 200px;
-    height: 300px;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: none;
-    border-radius: 10px;
-  }
-  label {
-    font-family: "Courier New", Courier, monospace;
-    font-weight: bold;
-  }
-  button {
-    margin-top: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
-    font-family: "Courier New", Courier, monospace;
-    border-style: none;
-  }
-  button:hover {
-    background-color: rgb(218, 83, 110);
-  }
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+h1 {
+  text-align: center;
+}
+nav {
+  background-color: black;
+  margin: 0px;
+  height: 32px;
+  color: aliceblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#crapton {
+  background-color: grey;
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body,
+h1,
+p {
+  margin: 0px;
+}
+.moviescon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  width: fit-content;
+  justify-content: center;
+}
+.moviescon > li {
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 6px;
+  border: 2px black solid;
+}
