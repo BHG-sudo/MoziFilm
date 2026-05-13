@@ -97,7 +97,8 @@ INSERT INTO `meta_adat` (`id`, `borito`, `cim`, `rendezo`, `kiadas`, `mufaj`, `i
 (6, 'https://www.imdb.com/title/tt3460252/mediaviewer/rm2736055040/?ref_=tt_ov_i', 'Aljas Nyolcas', 'Quantin Tarantino', '2016-01-06', 'Thiller, Dráma', '02:48:00'),
 (7, 'https://www.imdb.com/title/tt1853728/mediaviewer/rm3478320641/?ref_=tt_ov_i', 'Django Elszabadul', 'Quantin Tarantino', '2012-01-13', 'Western, Dráma', '02:45:00'),
 (8, 'https://www.imdb.com/title/tt0110912/mediaviewer/rm1229746689/?ref_=tt_ov_i', 'Ponyva Regény', 'Quantin Tarantino', '1994-04-13', 'Dráma, Sötét Komédia', '02:34:00'),
-(9, 'https://www.imdb.com/title/tt0169858/mediaviewer/rm1571282690/?ref_=tt_ov_i', 'Neon Genesis Evangelion: Az Evangelion Vége', 'Hideaki Anno', '1997-07-19', 'Dráma, Sci-Fi, Pszichológiai Thiller', '01:27:00'),
+(9, 'https://upload.wikimedia.org/wikipedia/en/thumb/8/8a/Ichithekillerposter.jpg/250px-Ichithekillerposter.jpg', 'Ichi The Killer', '2001-09-14', 'Sötét Komédia, Dráma, Krimi')
+(10, 'https://www.imdb.com/title/tt0169858/mediaviewer/rm1571282690/?ref_=tt_ov_i', 'Neon Genesis Evangelion: Az Evangelion Vége', 'Hideaki Anno', '1997-07-19', 'Dráma, Sci-Fi, Pszichológiai Thiller', '01:27:00'),
 (11, 'https://www.imdb.com/title/tt0923811/mediaviewer/rm3301766401/?ref_=tt_ov_i', 'Neon Genesis Evangelion 1.0: You Are (Not) Alone', 'Hideaki Anno', '2007-09-01', 'Dráma, Sci-Fi, Pszichológiai Thiller', '01:38:00'),
 (12, 'https://www.imdb.com/title/tt0860906/mediaviewer/rm827192577/?ref_=tt_ov_i', 'Neon Genesis Evangelion 2.0: You Can (Not) Advance', 'Hideaki Anno', '2009-06-27', 'Dráma, Sci-Fi, Pszichológiai Thiller', '01:48:00'),
 (13, 'https://www.imdb.com/title/tt0860907/mediaviewer/rm2818101250/?ref_=tt_ov_i', 'Neon Genesis Evangelion 3.0: You Can (Not) Redo', 'Hideaki Anno', '2012-11-17', 'Dráma, Sci-Fi, Pszichológiai Thiller', '01:36:00'),
