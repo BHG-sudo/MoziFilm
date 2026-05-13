@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Máj 13. 10:24
+-- Létrehozás ideje: 2026. Máj 13. 11:41
 -- Kiszolgáló verziója: 10.4.28-MariaDB
 -- PHP verzió: 8.2.4
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Adatbázis: `filmek`
 --
+CREATE DATABASE IF NOT EXISTS `filmek` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
+USE `filmek`;
 
 -- --------------------------------------------------------
 
@@ -27,6 +29,7 @@ SET time_zone = "+00:00";
 -- Tábla szerkezet ehhez a táblához `felhasznalok`
 --
 
+DROP TABLE IF EXISTS `felhasznalok`;
 CREATE TABLE `felhasznalok` (
   `id` int(100) NOT NULL,
   `nev` varchar(100) NOT NULL,
@@ -48,6 +51,7 @@ INSERT INTO `felhasznalok` (`id`, `nev`, `jelszo`, `email`) VALUES
 -- Tábla szerkezet ehhez a táblához `film_listak`
 --
 
+DROP TABLE IF EXISTS `film_listak`;
 CREATE TABLE `film_listak` (
   `id` int(100) NOT NULL,
   `filmID` int(100) NOT NULL,
@@ -68,6 +72,7 @@ INSERT INTO `film_listak` (`id`, `filmID`, `felhasznaloID`) VALUES
 -- Tábla szerkezet ehhez a táblához `meta_adat`
 --
 
+DROP TABLE IF EXISTS `meta_adat`;
 CREATE TABLE `meta_adat` (
   `id` int(100) NOT NULL,
   `borito` varchar(1000) NOT NULL,
