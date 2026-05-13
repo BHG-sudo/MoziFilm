@@ -1,0 +1,108 @@
+ul {
+  list-style: none;
+}
+h1 {
+  text-align: center;
+}
+nav {
+  background-color: black;
+  font-family: "Courier New", Courier, monospace;
+  margin: 0px;
+  height: 32px;
+  color: rgb(72, 126, 197);
+  font-weight: bold;
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#crapton {
+  background-color: rgb(34, 34, 34);
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(94, 142, 206);
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body {
+  background: #000000;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(46, 46, 133, 1) 100%
+  );
+}
+
+body,
+h1,
+p {
+  margin: 0px;
+}
+.moviecon,
+.moviescon,
+.maininfo,
+.bot {
+  display: flex;
+  flex-direction: column;
+}
+.moviescon {
+  margin: auto;
+  width: fit-content;
+  justify-content: center;
+}
+.top {
+  display: flex;
+  flex-direction: row;
+}
+.info {
+  display: inline-flex;
+  padding-left: 0px;
+  color: black;
+  padding-bottom: 10px;
+  font-family: "Courier New", Courier, monospace;
+}
+.moreinfo {
+  display: flex;
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+}
+.moviespad {
+  padding: 0.75rem;
+  border: 1px solid rgba(160, 160, 160, 0.4);
+  border-radius: 4px;
+}
+.moviespad > li + li {
+  border-top: 1px solid rgba(160, 160, 160, 0.4);
+}
+.moviespad {
+  background-color: rgb(97, 160, 212);
+}
+.cover {
+  padding-right: 10px;
+}
+.name {
+  padding-bottom: 5px;
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  font-size: larger;
+}
+li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+#description {
+  font-family: "Courier New", Courier, monospace;
+}
+.gombok {
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
+.rating {
+  font-weight: bold;
+}
+.gombok:hover {
+  background-color: rgb(72, 126, 197);
+  border-style: none;
+  color: orange;
+}
