@@ -22,13 +22,14 @@ if (mysqli_num_rows($result) > 0) {
             $_SESSION["id"] = $row["id"];
             $_SESSION["email"] = $row["email"];
             $_SESSION["nev"] = $felhasznev;
-            echo "belépve";
+            $_SESSION["belepve"] = true;
+            header("Location: ../frontend/index.php");
         }else{
-            header('Location: ../frontend/index.html');
+            header('Location: ../frontend/bejelentk.html');
         }
     }
 }else{
-    header('Location: ../frontend/index.html');
+    header('Location: ../frontend/bejelentk.html');
 }
 mysqli_close($conn);
 ?>
