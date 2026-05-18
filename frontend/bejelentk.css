@@ -10,7 +10,7 @@ h1 {
   font-size: 60px;
   text-align: center;
   font-family: "Courier New", Courier, monospace;
-  color: rgb(148, 194, 255);
+  color: rgb(72, 126, 197);
 }
 #sha {
   margin-left: auto;
@@ -32,7 +32,6 @@ label {
   font-family: "Courier New", Courier, monospace;
   font-weight: bold;
 }
-
 body {
   margin: auto;
   font-family: -apple-system, BlinkMacSystemFont, sans-serif;

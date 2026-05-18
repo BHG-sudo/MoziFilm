@@ -8,4 +8,10 @@
   background-color: white;
   top: 20%;
   left: 25%;
+  padding: 0px;
+  margin: 0px;
+}
+#imgC {
+  height: 480px;
+  width: 240px;
 }

@@ -68,11 +68,16 @@ mysqli_close($conn);
             <h1>Elérhető Filmek</h1>
         </div>
         <div>
-            <ul class="moviescon" id="moviescon">
-
-            </ul>
+            <ul class="moviescon" id="moviescon"></ul>
         </div>
-        <div id="movieC" class="movieCard disabled"></div>
+        <div id="movieC" class="movieCard disabled">
+            <div id="imgContainer">
+                <img id="imgC">
+            </div>
+            <div id="textContainer">
+                <p>baromság</p>
+            </div>    
+        </div>
     </main>
     <script src="main.js"></script>
 </body>
