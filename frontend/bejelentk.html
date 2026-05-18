@@ -17,25 +17,24 @@
     </style>
 </head>
 
-
 <body>
-
     <div>
         <div class="wave"></div>
         <div class="wave"></div>
         <div class="wave"></div>
         <h1>Bejelentkezés</h1>
-        <form action="../backend/bejelentk.php" method="post"></form>
-        <fieldset>
-            <div id="sha">
-                <input type="text" id="nev" name="nev" placeholder="Felhasználó név" required>
-                <input type="password" id="jelszo" name="jelszo" placeholder="Jelszó" required>
-                <button class="navigombok">Bejelentkezés</button>
-                <button class="navigombok">
-                    <a href="../frontend/regiszt.html">Regisztráció</a>
-                </button>
-            </div>
-        </fieldset>
+        <form action="../backend/bejelentk.php" method="post">
+            <fieldset>
+                <div id="sha">
+                    <input type="text" id="nev" name="nev" placeholder="Felhasználó név" required>
+                    <input type="password" id="jelszo" name="jelszo" placeholder="Jelszó" required>
+                    <button type="submit" class="navigombok">Bejelentkezés</button>
+                    <button type="button" class="navigombok" onclick="document.location='regiszt.html'">
+                        <span>Regisztráció</span>
+                    </button>
+                </div>
+            </fieldset>
+        </form>
     </div>
 
 
