@@ -6,6 +6,9 @@ ul {
 h1 {
   text-align: center;
 }
+main {
+  position: relative;
+}
 nav {
   background-color: black;
   font-family: "Courier New", Courier, monospace;
@@ -95,7 +98,7 @@ p {
   font-family: "Courier New", Courier, monospace;
   color: white;
 }
-img{
+img {
   width: 160px;
   height: 260px;
 }

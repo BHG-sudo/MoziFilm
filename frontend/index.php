@@ -34,6 +34,7 @@ if (mysqli_num_rows($result) > 0) {
     echo "0 results";
 }
 mysqli_close($conn);
+
 ?>
 
 <!DOCTYPE html>
@@ -43,6 +44,7 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="movieCard.css">
     <title>Főoldal</title>
 </head>
 
@@ -57,6 +59,9 @@ mysqli_close($conn);
         <button class="navigombok">
             <a href="filmlist.html">Film listád</a>
         </button>
+        <button class="navigombok">
+           <a href="../backend/kijelentk.php">Kijelentkezés</a>
+        </button>
     </nav>
     <main role="main">
         <div id="crapton">
@@ -67,24 +72,36 @@ mysqli_close($conn);
 
             </ul>
         </div>
+        <div id="movieC" class="movieCard disabled"></div>
     </main>
-    <script>
-    let container = document.getElementById("moviescon");
-    for (const E of adatok) {
-        let moviecon = document.createElement("li");
-        moviecon.id = "con"+E["id"];
-        console.log(moviecon);
-        container.appendChild(moviecon);
-        let moviediv = document.createElement("div");
-        moviediv.id = "div"+E["id"];
-        moviediv.classList.toggle("moviecon");
-        moviecon.appendChild(moviediv);
-        let movieimg = document.createElement("img");
-        movieimg.id = "img"+E["id"];
-        movieimg.src = ""+E["borito"]+"";
-        moviediv.appendChild(movieimg);
-    }
-</script>
+    <script src="main.js"></script>
 </body>
 
 </html>
+<?php 
+if (isset($_SESSION["belepve"])) {
+    if ($_SESSION["belepve"] == true) {
+        ?>
+            <script>
+                let nav = document.getElementsByClassName("navigombok");
+                nav[0].style.display = "none";
+                nav[1].style.display = "none";
+            </script>
+        <?php
+    }else{
+        ?>
+            <script>
+                let nav = document.getElementsByClassName("navigombok");
+                nav[3].style.display = "none";
+            </script>
+        <?php
+    }
+}else{
+    ?>
+        <script>
+            let nav = document.getElementsByClassName("navigombok");
+            nav[3].style.display = "none";
+        </script>
+    <?php
+}
+?>
