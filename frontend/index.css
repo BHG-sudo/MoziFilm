@@ -47,11 +47,11 @@ nav {
   transform: translateY(2px) translateX(1px);
   box-shadow: 2px 5px 0 0 rgb(94, 142, 206);
 }
-a:hover {
+.navigombok > span:hover {
   color: orange;
   text-decoration: none;
 }
-a {
+.navigombok > span {
   text-decoration: none;
   color: white;
 }

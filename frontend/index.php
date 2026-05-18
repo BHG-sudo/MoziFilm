@@ -50,17 +50,17 @@ mysqli_close($conn);
 
 <body>
     <nav id="nav">
-        <button class="navigombok">
-            <a href="bejelentk.html">Bejelentkezés</a>
+        <button class="navigombok" onclick="document.location='bejelentk.html'">
+            <span>Bejelentkezés</span>
         </button>
-        <button class="navigombok">
-            <a href="regiszt.html">Regisztráció</a>
+        <button class="navigombok"onclick="document.location='regiszt.html'">
+            <span>Regisztráció</span>
         </button>
-        <button class="navigombok">
-            <a href="filmlist.html">Film listád</a>
+        <button class="navigombok" onclick="document.location='filmlist.html'">
+            <span>Film listád</span>
         </button>
-        <button class="navigombok">
-           <a href="../backend/kijelentk.php">Kijelentkezés</a>
+        <button class="navigombok" onclick="document.location='../backend/kijelentk.php'">
+           <span>Kijelentkezés</span>
         </button>
     </nav>
     <main role="main">
