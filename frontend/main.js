@@ -17,5 +17,15 @@ let Card = document.getElementById("movieC");
 for (const E of container.children) {
   E.addEventListener("click", function () {
     Card.classList.toggle("disabled");
+    filmCardGenerate(E.id);
   });
+}
+function filmCardGenerate(id){
+  const [word, digits] = id.match(/\D+|\d+/g);
+  let imgC = document.getElementById("imgC");
+  for (const E of adatok) {
+    if (E["id"] == id) {
+      imgC.src = E[""]
+    }
+  }
 }
