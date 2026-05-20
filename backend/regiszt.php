@@ -20,7 +20,7 @@ $sql = "INSERT INTO felhasznalok (id, nev, jelszo, email)
 if ($conn->query($sql) === TRUE) {
     $_SESSION["email"] = $email;
     $_SESSION["nev"] = $felhasznev;
-    header("Location: ../frontend//bejelentk.html");
+    header("Location: ../frontend/bejelentk.html");
   } else {
     echo "Hiba: " . $sql . "<br>" . $conn->error;
   }
