@@ -1,0 +1,181 @@
+ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+h1 {
+  text-align: center;
+}
+main {
+  position: relative;
+}
+nav {
+  background-color: black;
+  font-family: "Courier New", Courier, monospace;
+  margin: 0px;
+  height: 32px;
+  color: rgb(72, 126, 197);
+  font-weight: bold;
+  font-size: larger;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 15px;
+  padding-top: 15px;
+}
+
+.navigombok {
+  background-color: rgb(34, 34, 34);
+  color: black;
+  border-radius: 10em;
+  font-size: 13px;
+  font-weight: bold;
+  padding: 1em 2em;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  border: 1px solid black;
+  box-shadow: rgb(94, 142, 206);
+  font-family: "Courier New", Courier, monospace;
+}
+
+.navigombok:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 rgb(94, 142, 206);
+}
+
+.navigombok:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 2px 5px 0 0 rgb(94, 142, 206);
+}
+.navigombok > span:hover {
+  color: orange;
+  text-decoration: none;
+}
+.navigombok > span {
+  text-decoration: none;
+  color: white;
+}
+
+#crapton {
+  background-color: rgb(34, 34, 34);
+  font-family: "Courier New", Courier, monospace;
+  color: rgb(94, 142, 206);
+  height: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body,
+h1,
+p {
+  margin: 0px;
+}
+.moviescon {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: auto;
+  width: fit-content;
+  justify-content: center;
+}
+.moviescon > li {
+  margin-left: 10px;
+  margin-top: 10px;
+  border: 2px white solid;
+  width: 160px;
+  height: 260px;
+  display: inline-flex;
+  padding-left: 0px;
+  color: black;
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+}
+img {
+  width: 160px;
+  height: 260px;
+}
+body {
+  margin: auto;
+  font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+  overflow: auto;
+  background: linear-gradient(
+    315deg,
+    rgb(0, 0, 0) 3%,
+    rgb(10, 31, 58) 38%,
+    rgb(18, 39, 83) 68%,
+    rgb(23, 41, 65) 98%
+  );
+  animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  background-attachment: fixed;
+}
+a {
+  font-family: "Courier New", Courier, monospace;
+  color: white;
+  text-decoration: none;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
+}
+
+.wave {
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 1000% 1000% 0 0;
+  position: fixed;
+  width: 200%;
+  height: 12em;
+  animation: wave 10s -3s linear infinite;
+  transform: translate3d(0, 0, 0);
+  opacity: 0.8;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.wave:nth-of-type(2) {
+  bottom: -1.25em;
+  animation: wave 18s linear reverse infinite;
+  opacity: 0.8;
+}
+
+.wave:nth-of-type(3) {
+  bottom: -2.5em;
+  animation: wave 20s -1s reverse infinite;
+  opacity: 0.9;
+}
+
+@keyframes wave {
+  2% {
+    transform: translateX(1);
+  }
+
+  25% {
+    transform: translateX(-25%);
+  }
+
+  50% {
+    transform: translateX(-50%);
+  }
+
+  75% {
+    transform: translateX(-25%);
+  }
+
+  100% {
+    transform: translateX(1);
+  }
+}
+#imgC {
+  width: 33333300px;
+  height: 0px;
+}
