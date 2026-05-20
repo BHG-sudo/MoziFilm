@@ -56,7 +56,7 @@ mysqli_close($conn);
         <button class="navigombok"onclick="document.location='regiszt.html'">
             <span>Regisztráció</span>
         </button>
-        <button class="navigombok" onclick="document.location='filmlist.html'">
+        <button class="navigombok" onclick="document.location='filmlist.php'">
             <span>Film listád</span>
         </button>
         <button class="navigombok" onclick="document.location='../backend/kijelentk.php'">
