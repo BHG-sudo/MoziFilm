@@ -1,7 +1,6 @@
 <?php
 session_start();
 if (isset($_SESSION["belepve"])) {
-        
 }
 
 $servername = "localhost";
@@ -18,17 +17,16 @@ if (!$conn) {
 <script>
     const adatok = [];
 </script>
-<?php  
+<?php
 $sql = "SELECT * FROM meta_adat";
 $result = mysqli_query($conn, $sql);
 if (mysqli_num_rows($result) > 0) {
-    while($row = mysqli_fetch_assoc($result)){
-    ?>
-    <script>
-        adatok.push( <?php echo json_encode($row); ?> );
-        
-    </script>
-    <?php
+    while ($row = mysqli_fetch_assoc($result)) {
+?>
+        <script>
+            adatok.push(<?php echo json_encode($row); ?>);
+        </script>
+<?php
     }
 } else {
     echo "0 results";
@@ -52,29 +50,36 @@ mysqli_close($conn);
         <button class="navigombok" onclick="document.location='bejelentk.html'">
             <span>Bejelentkezés</span>
         </button>
-        <button class="navigombok"onclick="document.location='regiszt.html'">
+        <button class="navigombok" onclick="document.location='regiszt.html'">
             <span>Regisztráció</span>
         </button>
         <button class="navigombok" onclick="document.location='filmlist.php'">
             <span>Film listád</span>
         </button>
         <button class="navigombok" onclick="document.location='../backend/kijelentk.php'">
-           <span>Kijelentkezés</span>
+            <span>Kijelentkezés</span>
         </button>
     </nav>
-    
+
     <main role="main">
         <div id="crapton">
             <h1>Elérhető Filmek</h1>
         </div>
         <div id="movieC" class="movieCard disabled">
             <div id="textContainer">
-                <p id="vissza">Vissza</p>
-            </div>     
+                <p id="vissza">❎</p>
+                <h3 id="cim">CÍM</h3>
+                <h3 id="kiadas"></h3>
+                <h3 id="rendezo">director</h3>
+                <h3 id="leiras">leírás//////////////////////////////////////////////////////////////////////////////////////////////</h3>
+                <br>
+                <br>
+                <h3 id="mufaj">bvasdhbjadfhbdafhb</h3>
+            </div>
             <div id="imgContainer">
                 <img id="imgB">
                 <img id="imgC">
-            </div>              
+            </div>
         </div>
         <div>
             <ul class="moviescon" id="moviescon"></ul>
@@ -84,30 +89,30 @@ mysqli_close($conn);
 </body>
 
 </html>
-<?php 
+<?php
 if (isset($_SESSION["belepve"])) {
     if ($_SESSION["belepve"] == true) {
-        ?>
-            <script>
-                let nav = document.getElementsByClassName("navigombok");
-                nav[0].style.display = "none";
-                nav[1].style.display = "none";
-            </script>
-        <?php
-    }else{
-        ?>
-            <script>
-                let nav = document.getElementsByClassName("navigombok");
-                nav[3].style.display = "none";
-            </script>
-        <?php
-    }
-}else{
+?>
+        <script>
+            let nav = document.getElementsByClassName("navigombok");
+            nav[0].style.display = "none";
+            nav[1].style.display = "none";
+        </script>
+    <?php
+    } else {
     ?>
         <script>
             let nav = document.getElementsByClassName("navigombok");
             nav[3].style.display = "none";
         </script>
     <?php
+    }
+} else {
+    ?>
+    <script>
+        let nav = document.getElementsByClassName("navigombok");
+        nav[3].style.display = "none";
+    </script>
+<?php
 }
 ?>

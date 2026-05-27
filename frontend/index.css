@@ -181,11 +181,11 @@ a {
   width: 240px;
   left: -240px;
 }
-#imgB{
+#imgB {
   position: absolute;
   width: 720px;
   height: 480px;
-  opacity: 0.8;
+  filter: blur(2px);
   background-repeat: no-repeat;
 }
 .disabled {
@@ -199,8 +199,19 @@ a {
   left: 35%;
   border-radius: 10px;
 }
-#textContainer{
+#textContainer {
+  width: 720px;
+  height: 480px;
   z-index: 100;
   position: absolute;
   color: wheat;
+  text-align: center;
+}
+#vissza {
+  text-align: right;
+}
+#cim {
+  text-align: center;
+  background-color: blueviolet;
+  background-color: opacity(0.2);
 }
