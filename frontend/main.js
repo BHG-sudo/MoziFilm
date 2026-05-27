@@ -26,14 +26,8 @@ document.getElementById("vissza").addEventListener("click", function(){
 })
 function filmCardGenerate(id){
   const [word, digits] = id.match(/\D+|\d+/g);
-  let imgC = document.getElementById("imgC");
-  let imgB = document.getElementById("imgB");
-  for (const E of adatok) {
-    if (E["id"] == digits) {
-      imgC.src = E["borito"];
-      imgB.src = E["hatter"];
-    }
-  }
+  document.getElementById("imgC").src = adatok[digits]["borito"];
+  document.getElementById("imgB").src = adatok[digits]["hatter"];
   if (Card.classList.contains("disabled")) {
     Card.classList.toggle("disabled");
   }
