@@ -44,7 +44,6 @@ mysqli_close($conn);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <link rel="stylesheet" href="movieCard.css">
     <title>Főoldal</title>
 </head>
 
@@ -63,20 +62,22 @@ mysqli_close($conn);
            <span>Kijelentkezés</span>
         </button>
     </nav>
+    
     <main role="main">
         <div id="crapton">
             <h1>Elérhető Filmek</h1>
         </div>
+        <div id="movieC" class="movieCard disabled">
+            <div id="textContainer">
+                <p id="vissza">Vissza</p>
+            </div>     
+            <div id="imgContainer">
+                <img id="imgB">
+                <img id="imgC">
+            </div>              
+        </div>
         <div>
             <ul class="moviescon" id="moviescon"></ul>
-        </div>
-        <div id="movieC" class="movieCard disabled">
-            <div id="imgContainer">
-                <img id="imgC">
-            </div>
-            <div id="textContainer">
-                <p>baromság</p>
-            </div>    
         </div>
     </main>
     <script src="main.js"></script>

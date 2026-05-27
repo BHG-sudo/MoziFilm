@@ -1,4 +1,6 @@
 let container = document.getElementById("moviescon");
+let movieC = document.getElementById("movieC");
+
 for (const E of adatok) {
   let moviecon = document.createElement("li");
   moviecon.id = "con" + E["id"];
@@ -16,16 +18,23 @@ for (const E of adatok) {
 let Card = document.getElementById("movieC");
 for (const E of container.children) {
   E.addEventListener("click", function () {
-    Card.classList.toggle("disabled");
     filmCardGenerate(E.id);
   });
 }
+document.getElementById("vissza").addEventListener("click", function(){
+  Card.classList.toggle("disabled");
+})
 function filmCardGenerate(id){
   const [word, digits] = id.match(/\D+|\d+/g);
   let imgC = document.getElementById("imgC");
+  let imgB = document.getElementById("imgB");
   for (const E of adatok) {
-    if (E["id"] == id) {
-      imgC.src = E[""]
+    if (E["id"] == digits) {
+      imgC.src = E["borito"];
+      imgB.src = E["hatter"];
     }
+  }
+  if (Card.classList.contains("disabled")) {
+    Card.classList.toggle("disabled");
   }
 }
