@@ -73,8 +73,8 @@ mysqli_close($conn);
                 <h3 id="rendezo">director</h3>
                 <h3 id="leiras">leírás//////////////////////////////////////////////////////////////////////////////////////////////</h3>
                 <br>
-                <br>
                 <h3 id="mufaj">bvasdhbjadfhbdafhb</h3>
+                <span id="hozzaadas"> +</span>
             </div>
             <div id="imgContainer">
                 <img id="imgB">
@@ -85,6 +85,9 @@ mysqli_close($conn);
             <ul class="moviescon" id="moviescon"></ul>
         </div>
     </main>
+    <form name="automatic" action="../backend/filmadd.php" method="post" style="display: none">
+        <input type="text" id="filmid" name="filmid">
+    </form>
     <script src="main.js"></script>
 </body>
 
@@ -104,6 +107,8 @@ if (isset($_SESSION["belepve"])) {
         <script>
             let nav = document.getElementsByClassName("navigombok");
             nav[3].style.display = "none";
+            nav[2].style.display = "none";
+
         </script>
     <?php
     }
@@ -112,6 +117,7 @@ if (isset($_SESSION["belepve"])) {
     <script>
         let nav = document.getElementsByClassName("navigombok");
         nav[3].style.display = "none";
+        nav[2].style.display = "none";
     </script>
 <?php
 }

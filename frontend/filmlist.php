@@ -16,7 +16,7 @@
                 const filmlist = []
             </script><?php
             $sql = "SELECT * FROM meta_adat WHERE meta_adat.id in (SELECT film_listak.filmekID FROM film_listak WHERE film_listak.felhasznalokID = '$id');";
-            $result = mysqli_query($conn, $sql);
+            $result = mysqli_query($conn, $sql)or die("Nincs a listádon semmi");
             if (mysqli_num_rows($result) > 0) {
                 while($row = mysqli_fetch_assoc($result)){
                 ?>
