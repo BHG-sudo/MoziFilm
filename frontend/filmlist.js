@@ -34,6 +34,7 @@ for(const E of filmlist){
 
     let name = document.createElement("div");
     name.id = "name"+E["id"];
+    name.classList.toggle("name");
     name.textContent = E["cim"];
     maininfo.appendChild(name);
 
@@ -45,6 +46,12 @@ for(const E of filmlist){
     listinfo.id = "listInfo"+E["id"];
     listinfo.classList.toggle("info");
     divinfo.appendChild(listinfo);
+
+    let director = document.createElement("li");
+    director.id = "director"+E["id"];
+    director.classList.toggle("dir");
+    director.textContent = "Rendező: "+E["rendezo"];
+    listinfo.appendChild(director);
 
     let date = document.createElement("li");
     date.id = "lidate"+E["id"];
@@ -63,21 +70,11 @@ for(const E of filmlist){
     moreinfo.classList.toggle("moreinfo");
     maininfo.appendChild(moreinfo);
 
-    let rating = document.createElement("span");
-    rating.id = "rating"+E["div"];
-    rating.classList.toggle("rating");
-    /*ADATBÁZIST FRISSYTENI KELL!!!*/rating.textContent = "72";
-    moreinfo.appendChild(rating);
-
     let description = document.createElement("div")
     description.id = "description"+E["id"];
     description.classList.toggle("description");
-    /*ADATBÁZIST FRISSYTENI KELL!!!*/description.textContent = "Késöbb";
+    description.textContent = E["leiras"];
     moreinfo.appendChild(description);
 
-    let director = document.createElement("span");
-    director.id = "director"+E["id"];
-    director.classList.toggle("info");
-    director.textContent = "Director: "+E["rendezo"];
-    moreinfo.appendChild(director);
+    
 }

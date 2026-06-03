@@ -44,22 +44,22 @@
 </head>
 
 <body>
-    <nav id="header">
-        <div>
-            <p>Létezik</p>
-        </div>
+<nav id="nav">
+        <button class="navigombok" onclick="document.location='index.php'">
+            <span>Főoldal</span>
+        </button>
+        <button class="navigombok" onclick="document.location='../backend/kijelentk.php'">
+            <span>Kijelentkezés</span>
+        </button>
     </nav>
     <main role="main">
         <div id="crapton">
             <h1>Film figyelő</h1>
         </div>
-        <div>
-            <div id="stat" class="stat"></div>
             <div class="moviescon">
                 <ul id="moviesCon" class="moviespad">
                 </ul>
             </div>
-        </div>
     </main>
     <script src="filmlist.js"></script>
 </body>

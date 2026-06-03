@@ -122,6 +122,7 @@ p {
   );
 }
 
+
 .moviescon,
 .maininfo,
 .bot {
@@ -130,15 +131,16 @@ p {
 }
 .moviescon {
   margin: auto;
-  width: fit-content;
-  justify-content: center;
+  width: 50%;
+  justify-content: space-evenly;
 }
 .top {
   display: flex;
   flex-direction: row;
 }
 .info {
-  display: inline-flex;
+  display: flex;
+  justify-content: space-around;
   padding-left: 0px;
   color: black;
   padding-bottom: 10px;
@@ -146,6 +148,8 @@ p {
 }
 .moreinfo {
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   color: black;
   font-family: "Courier New", Courier, monospace;
 }
@@ -168,6 +172,7 @@ p {
   font-weight: bold;
   font-family: "Courier New", Courier, monospace;
   font-size: larger;
+  text-align: center;
 }
 li {
   padding-top: 10px;
@@ -175,6 +180,7 @@ li {
 }
 .description {
   font-family: "Courier New", Courier, monospace;
+  padding-bottom: 20px;
 }
 .gombok {
   font-family: "Courier New", Courier, monospace;
