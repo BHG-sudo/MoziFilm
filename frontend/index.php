@@ -67,14 +67,18 @@ mysqli_close($conn);
         </div>
         <div id="movieC" class="movieCard disabled">
             <div id="textContainer">
-                <p id="vissza">❎</p>
-                <h3 id="cim">CÍM</h3>
-                <h3 id="kiadas"></h3>
-                <h3 id="rendezo">director</h3>
-                <h3 id="leiras">leírás//////////////////////////////////////////////////////////////////////////////////////////////</h3>
-                <br>
-                <h3 id="mufaj">bvasdhbjadfhbdafhb</h3>
-                <span id="hozzaadas"> +</span>
+                <p id="vissza">❌</p>
+                <div class="leirasdoboz">
+                    <h3 id="cim">CÍM</h3>
+                    <h3 id="kiadas"></h3>
+                    <h3 id="rendezo">director</h3>
+                    <h3 id="leiras">leírás//////////////////////////////////////////////////////////////////////////////////////////////</h3>
+                    <br>
+                    <h3 id="mufaj">bvasdhbjadfhbdafhb</h3>
+                </div>
+                <div id="hozzadob">
+                    <span id="hozzaadas"> hozzáadás</span>
+                </div>
             </div>
             <div id="imgContainer">
                 <img id="imgB">
@@ -108,7 +112,6 @@ if (isset($_SESSION["belepve"])) {
             let nav = document.getElementsByClassName("navigombok");
             nav[3].style.display = "none";
             nav[2].style.display = "none";
-
         </script>
     <?php
     }

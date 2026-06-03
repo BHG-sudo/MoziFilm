@@ -3,6 +3,10 @@ ul {
   margin: 0px;
   padding: 0px;
 }
+* {
+  margin: 0px;
+  padding: 0px;
+}
 h1 {
   text-align: center;
 }
@@ -204,18 +208,54 @@ a {
   height: 480px;
   z-index: 100;
   position: absolute;
-  color: wheat;
+  color: black;
   text-align: center;
 }
 #vissza {
   text-align: right;
+  margin: 0px;
 }
 #cim {
   text-align: center;
-  background-color: blueviolet;
-  background-color: opacity(0.2);
+}
+.leirasdoboz {
+  background: rgb(128, 128, 128, 0.4);
+  font-family: "Courier New", Courier, monospace;
+}
+.leirasdoboz:hover {
+  background: rgba(128, 128, 128, 0.7);
+}
+#hozzadob {
+  margin-top: 10px;
 }
 #hozzaadas {
-  font-size: 48px;
-  color: green;
+  background: rgba(128, 128, 128, 0.5);
+  color: white;
+  border-radius: 10em;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 2px 1em;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  box-shadow: black(94, 142, 206);
+  font-family: "Courier New", Courier, monospace;
+}
+
+#hozzaadas:hover {
+  transform: translateY(-4px) translateX(-2px);
+  box-shadow: 2px 5px 0 0 rgb(0, 0, 0);
+  background: rgb(83, 83, 83, 1);
+}
+
+#hozzaadas:active {
+  transform: translateY(2px) translateX(1px);
+  box-shadow: 2px 5px 0 0 rgb(0, 0, 0);
+}
+#hozzaadas > span:hover {
+  color: orange;
+  text-decoration: none;
+}
+#hozzaadas > span {
+  text-decoration: none;
+  color: white;
 }
