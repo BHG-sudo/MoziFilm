@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Gép: 127.0.0.1
--- Létrehozás ideje: 2026. Jún 01. 14:23
+-- Létrehozás ideje: 2026. Jún 03. 11:11
 -- Kiszolgáló verziója: 10.4.28-MariaDB
 -- PHP verzió: 8.2.4
 
@@ -22,12 +22,14 @@ SET time_zone = "+00:00";
 --
 CREATE DATABASE IF NOT EXISTS `filmek` DEFAULT CHARACTER SET utf8 COLLATE utf8_hungarian_ci;
 USE `filmek`;
+
 -- --------------------------------------------------------
 
 --
 -- Tábla szerkezet ehhez a táblához `felhasznalok`
 --
 
+DROP TABLE IF EXISTS `felhasznalok`;
 CREATE TABLE `felhasznalok` (
   `id` int(255) NOT NULL,
   `nev` varchar(1000) NOT NULL,
@@ -35,12 +37,20 @@ CREATE TABLE `felhasznalok` (
   `email` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_hungarian_ci;
 
+--
+-- A tábla adatainak kiíratása `felhasznalok`
+--
+
+INSERT INTO `felhasznalok` (`id`, `nev`, `jelszo`, `email`) VALUES
+(2, '6767', '6767', '6@7');
+
 -- --------------------------------------------------------
 
 --
 -- Tábla szerkezet ehhez a táblához `film_listak`
 --
 
+DROP TABLE IF EXISTS `film_listak`;
 CREATE TABLE `film_listak` (
   `id` int(255) NOT NULL,
   `filmekID` int(255) NOT NULL,
@@ -52,7 +62,9 @@ CREATE TABLE `film_listak` (
 --
 
 INSERT INTO `film_listak` (`id`, `filmekID`, `felhasznalokID`) VALUES
-(0, 0, 0);
+(0, 0, 0),
+(2, 22, 0),
+(3, 5, 2);
 
 -- --------------------------------------------------------
 
@@ -60,6 +72,7 @@ INSERT INTO `film_listak` (`id`, `filmekID`, `felhasznalokID`) VALUES
 -- Tábla szerkezet ehhez a táblához `meta_adat`
 --
 
+DROP TABLE IF EXISTS `meta_adat`;
 CREATE TABLE `meta_adat` (
   `id` int(100) NOT NULL,
   `borito` varchar(1000) NOT NULL,
@@ -86,7 +99,7 @@ INSERT INTO `meta_adat` (`id`, `borito`, `cim`, `rendezo`, `kiadas`, `mufaj`, `i
 (6, 'https://media.themoviedb.org/t/p/w300_and_h450_face/uqXD4ILapkpK9QAArL901vtGDcu.jpg', 'Aljas Nyolcas', 'Quantin Tarantino', '2016-01-06', 'Thiller, Dráma', '02:48:00', 'https://media.themoviedb.org/t/p/w500_and_h282_face/mUt9NGfLpHlqCCABeTCMntSLCVq.jpg', 'Nyolc sokat próbált fejvadász, az amerikai polgárháborút követő időszakban találkoznak egymással Wyoming erdős vidékein. Egy kemény hóvihar elől menekülve kénytelenek egy helyen meghúzni magukat, a kényszerű összezártság eredménye pedig ármány és intrika. Vajon túlélik-e a vihart az egymás megtévesztésével és átverésével boldogulni próbáló hétpróbás gazemberek?'),
 (7, 'https://media.themoviedb.org/t/p/w300_and_h450_face/uiC9Q5qArI8OsNTAH6PIWhwsztl.jpg', 'Django Elszabadul', 'Quantin Tarantino', '2012-01-13', 'Western, Dráma', '02:45:00', 'https://media.themoviedb.org/t/p/w500_and_h282_face/s4cJQaj40SwMifUrrdtdOJsjnRO.jpg', 'Amerika déli része két évvel a polgárháború előtt. Egy különös módszereket követő profi fejvadász egy rabszolga segítségével nagy sikert ér el, és hálából felszabadítja Djangót. De a társak együtt maradnak, hogy megkeressék a fekete férfi feleségét, akit egy rabszolgapiacon láttak utoljára. A nyomok végül egy ültetvényre vezetik őket, melynek tulajdonosa rabszolgáit - trénere segítségével - egymás elleni gladiátorküzdelemre képezi ki. A fejvadászoknak sikerül bejutniuk a birtokra, de nem biztos, hogy ki is jutnak onnan: a földesúr hű szolgája gyanút fog, és a kalandorok csapdába esnek. Dönteniük kell, hogy az önfeláldozás vagy a túlélés-e a fontosabb számukra.'),
 (8, 'https://media.themoviedb.org/t/p/w300_and_h450_face/i8N31RHT6WaBXSicxABMRyBH4yQ.jpg', 'Ponyvaregény', 'Quantin Tarantino', '1994-04-13', 'Dráma, Sötét Komédia', '02:34:00', 'https://media.themoviedb.org/t/p/w500_and_h282_face/suaEOtk1N1sgg2MTM7oZd2cfVp3.jpg', 'Adott két idősödő, szabad szájú, tökös, szimpatikus gengszter, Vincent és Jules, akik igyekeznek főnöküknek visszaszerezni egy aktatáskát. Ehhez persze meg kell ölniük pár embert, de ez az egyszerű bérgyilkosokkal gyakran megesik. Jules a rá célzott golyókat csodával határos módon elkerüli, s ezt jelnek tekintvén úgy dönt, felhagy eddigi életével. Társának viszont el kell vinnie szórakozni a gengszterfőnök feleségét... Van továbbá egy boxoló, Butch, aki a hírhedt marffiafőnök, Marselleus Wallace átvágását tervezi. Hogy-hogy nem, odáig fajul a történet, hogy végül már inkább a megmentésére készül, mint a lelövésére... Nem utolsósorban, pedig, van egy piti rabló-párosunk is, akik éppen egy étterem kirablására készülnek. Ám ott reggelizik Vincent és Jules.'),
-(9, 'https://media.themoviedb.org/t/p/w300_and_h450_face/k8j4YLZlda98dqp9ErymKzjYowG.jpg', 'Ichi the Killer', 'Takashi Miike', '2001-12-22', 'Dráma, Sötét Komédia, Krimi', '02:09:00', 'https://media.themoviedb.org/t/p/w500_and_h282_face/6Do6tBBHlBvr7aglrJqVHQ2TyLb.jpg', 'Adott egy szadista yakuza főnök, akinek rejtélyes körülmények között nyoma vész, de nem csak ő tűnik el, hanem egymilliárd jen is. Kakihara, a klán alvezére kettős motivációtól hajtva ered a nyomába: egyrészt a gang-hűség nem hagyja nyugodni, másrészt az, hogy szadizmusa mellett kedveli a mazochista játékokat is, és a főnök volt a kedvenc játszótársa. Az elsőszámú gyanúsított egy rivális banda vezetője, akiből úgy próbálnak meg információt kiszedni, hogy bőre alá dugott kampóknál fogva fellógatják, majd meglocsolják némi forró olajjal, s hogy ez sem hat, végső megoldásként különböző testrészeit szúrják keresztül kötőtűhöz hasonlatos tárgyakkal. Mint később kiderül, a fickó ártatlan, az akció félreértés volt, s ezt Kakihara nyelve bánja. Bocsánatkérésként ugyanis kénytelen lenyisszantani, természetesen premier plánban, hogy élvezhessük a részleteket. A főnök eltűnése mögött azonban Jijii és csapata áll. Jijii, aki regresszív hipnózisban tartja Ichit, a skizoid gyilkológépet.'),
+(9, 'https://media.themoviedb.org/t/p/w300_and_h450_face/k8j4YLZlda98dqp9ErymKzjYowG.jpg', 'Ichi the Killer', 'Takashi Miike', '2001-12-22', 'Dráma, Sötét Komédia, Krimi', '02:09:00', 'https://media.themoviedb.org/t/p/w500_and_h282_face/6Do6tBBHlBvr7aglrJqVHQ2TyLb.jpg', 'Adott egy szadista yakuza főnök, akinek rejtélyes körülmények között nyoma vész, de nem csak ő tűnik el, hanem egymilliárd jen is. Kakihara, a klán alvezére kettős motivációtól hajtva ered a nyomába: egyrészt a gang-hűség nem hagyja nyugodni, másrészt az, hogy szadizmusa mellett kedveli a mazochista játékokat is, és a főnök volt a kedvenc játszótársa.'),
 (10, 'https://media.themoviedb.org/t/p/w300_and_h450_face/1WbHq4iUuLvD8cDQydm7jK0sotX.jpg', 'Neon Genesis Evangelion: Az Evangelion Vége', 'Hideaki Anno', '1997-07-19', 'Dráma, Sci-Fi, Pszichológiai Thiller', '01:27:00', 'https://media.themoviedb.org/t/p/w500_and_h282_face/mF0JGy2BxGuXr7d1ZVLz2UIEFdW.jpg', 'SEELE nem hagyja annyiba a NERV sikereit. Támadást indít a központ ellen. Nem bízzák a véletlenre, ugyanis minden egységüket a központra küldik. Shinji megtörve elbújik a NERV központban a többiek elől. Miután a katonák bejutnak a létesítménybe, kíméletlenül elintéznek mindenkit, akik az útjukba állnak. A feladatuk a három pilóta likvidálása (Shinji, Rei, Asuka). Misato Shinji keresésére indul, de a SEELE beveti a titkos fegyverét, az UNIT 05-ket. Ezek a gépek már pilóták nélkül működnek. Asuka az EVA 02-vel felveszi a harcot ellenük. A feszültség egyre fokozódik, amikor is a harc közepette valami megváltozik. Valami, amit eddig soha nem éreztek. Vajon Misato idejében megtalálja Shinjit, és sikerül-e a NERV-nek visszaverni a támadást? De az egyszer biztos, a döntés ismét Shinji kezébe kerül!'),
 (11, 'https://media.themoviedb.org/t/p/w300_and_h450_face/pETU4GurpeEjBOM8oytMH0yNBHx.jpg', 'Neon Genesis Evangelion 1.0: You Are (Not) Alone', 'Hideaki Anno', '2007-09-01', 'Dráma, Sci-Fi, Pszichológiai Thiller', '01:38:00', 'https://media.themoviedb.org/t/p/w500_and_h282_face/tmXP9R43XlYTmVD7XLnakFbf2ax.jpg', 'Ikari Shinji egy átlagos, 14 éves fiúnak mondhatta magát egészen addig, amíg meghívást nem kapott, hogy utazzon el a Tokyo 3-ban lévő NERV központba. Meg is tette a hosszú távot, hogy újra láthassa édesapját, aki annak a központnak a parancsnoka. De megérkezése nem zajlik zökkenőmentesen. Megpillant egy hatalmas lényt, melyet Angyalnak hívnak. Itt találkozik Misatóval, egy csinos hölggyel, aki elviszi őt a központba. Mint utóbb kiderül, az apja csak azért hívatta, hogy egy óriásrobotot vezessen, melyet Evangelion-nak hívnak. Mint később kiderül, még egy Eva létezik. Ezek a szerkezetek az egyetlenek, amik felvehetik az Angyalok ellen a harcot. Irányítani csak 14 éves gyerekek tudják, mert csak ők tudnak összehangolódni az Eva-kkal. Shinji eleinte nem akarja elvállalni, de amint meglátja, hogy apja képes egy sérült lányt a neki szánt Evangelion-ba ültetni, meggondolja magát és kezébe veszi a sorsát.'),
 (12, 'https://media.themoviedb.org/t/p/w220_and_h330_face/wgEpDRynfr2ofAdB4GkCujPSitJ.jpg', 'Neon Genesis Evangelion 2.0: You Can (Not) Advance', 'Hideaki Anno', '2009-06-27', 'Dráma, Sci-Fi, Pszichológiai Thiller', '01:48:00', 'https://media.themoviedb.org/t/p/w500_and_h282_face/pzsVGcufDdBLmvagKyLFKaeA4O5.jpg', 'A második rész a NERV sarkvidéki bázisán, a Bethany Base-en kezdődik. Rögtön az anime elején megismerhetjük az új szereplőt, Makinami Mari Illustrious-t, az új EVA UNIT-05 pilótáját, aki a bázis alatt harcol a Harmadik Angyal ellen. Eközben Japánban Ikari Shinji édesanyja sírját látogatja meg apjával. Útközben hazafelé Misatóval értesülnek a Hetedik Angyal támadásáról, miközben a UNIT-02 légi úton megérkezik Németországból, és rögvest felveszi a harcot az Angyallal. Pilótája a Második Gyermek, Shikinami Asuka Langley százados. Vele egyidőben Ryoji Kaji is megérkezik'),
@@ -96,7 +109,7 @@ INSERT INTO `meta_adat` (`id`, `borito`, `cim`, `rendezo`, `kiadas`, `mufaj`, `i
 (16, 'https://media.themoviedb.org/t/p/w220_and_h330_face/a6GpeyAle6br9C8iMweZpflbdPo.jpg', 'Godzilla Minus One', 'Hideaki Anno', '2023-11-03', 'Dráma, Akció, Háborús', '02:05:00', 'https://media.themoviedb.org/t/p/w500_and_h282_face/oHBhHoNe59VH6bUMazDtJmWOFSS.jpg', 'A háború utáni Japán a mélyponton van, amikor egy új válság jelenik meg egy óriási szörnyeteg formájában, amelyet az atombomba szörnyű erejébe kereszteltek meg.'),
 (17, 'https://media.themoviedb.org/t/p/w300_and_h450_face/skAxIP1DgnVIXaUaPFozWXtsbhs.jpg', 'Tetsuo: Vasember', 'Shinya Tsukamoto', '1989-07-01', 'Horror, Sci-Fi', '01:07:00', 'https://media.themoviedb.org/t/p/w500_and_h282_face/sZ40CNVFVNFwANLQO0l1GuBPbRG.jpg', 'Egy japán üzletember minden napi rutinja közben \r\nmegsebesül egy fémdarab által ami lassan átalakítja az egész testét fémmé és acélá\r\n'),
 (18, 'https://media.themoviedb.org/t/p/w300_and_h450_face/6KiSSndIMLj1swkpPNq2lYppDVQ.jpg', 'Csillagok között', 'Christopher Nolan', '2014-11-06', 'Sci-Fi, Dráma', '02:49:00', 'https://media.themoviedb.org/t/p/w500_and_h282_face/2ssWTSVklAEc98frZUQhgtGHx7s.jpg', 'A nem túl távoli jövőben járunk, melyben bolygónk kezd lakhatatlanná válni. A föld alig hoz termést, rendszeresek a homokviharok, és lassan levegőt se lehet venni. Egy jelenés Coopert a NASA titkos telepére vezeti, ahol felkérik, hogy legyen a tagja annak a csapatnak, mely az emberiségnek új lakhelyet keres az univerzumban. Egy ismeretlen segítséggel megnyitott átjárón keresztül eljutnak egy galaxisba, ahol a közelben kialakult fekete lyuk miatt az idő is másképp telik. Ami nekik egy óra, az a végét járó földön éveket jelent. Alaposan meg kell hát gondolnia Coopernek, hogy a szóba jöhető bolygók közül melyikre látogat el, ha vissza akar térni a lányához, ahogy azt megígérte.'),
-(19, 'https://media.themoviedb.org/t/p/w220_and_h330_face/3X2o8o5EZMI1N0gwFjtZ1O6KtKO.jpg', 'Saló: avagy Szodoma 120 napja', 'Pier Paolo Pasolini', '1995-03-08', 'Tragédia, Dráma', '02:00:00', '', 'Az utolsó Pasolini-film De Sade márki nyomán: négy fasiszta egy villában a legváltozatosabb szexuális kínzásoknak veti alá a foglyokat. \"A Saloval mindazokhoz fordulok, akik hozzám hasonlóan gyűlölik a Hatalmat, azért, amit az emberi testtel művel: dologgá aljasítja, s ezáltal az embert megfosztja a személyiségétől... Én különös hévvel gyűlölöm azt a hatalmat, amelytől most, 1975-ben szenvedek. Ez a hatalom olyan rettenetes eszközökkel manipulálja a testet, hogy még Hitlertől sincs mit irigyelnie: ...új, elidegenített és hazug értékrendet hirdet, a fogyasztó társadalom értékeit. Ma az megy végbe éppen, amit Marx az élő, valódi, korábbi kultúrák megsemmisítésének nevezett...\" (Pasolini)'),
+(19, 'https://media.themoviedb.org/t/p/w220_and_h330_face/3X2o8o5EZMI1N0gwFjtZ1O6KtKO.jpg', 'Saló: avagy Szodoma 120 napja', 'Pier Paolo Pasolini', '1995-03-08', 'Tragédia, Dráma', '02:00:00', 'https://wallpapercave.com/wp/wp2945065.jpg', 'Az utolsó Pasolini-film De Sade márki nyomán: négy fasiszta egy villában a legváltozatosabb szexuális kínzásoknak veti alá a foglyokat. \"A Saloval mindazokhoz fordulok, akik hozzám hasonlóan gyűlölik a Hatalmat, azért, amit az emberi testtel művel: dologgá aljasítja, s ezáltal az embert megfosztja a személyiségétől... Én különös hévvel gyűlölöm azt a hatalmat, amelytől most, 1975-ben szenvedek. Ez a hatalom olyan rettenetes eszközökkel manipulálja a testet, hogy még Hitlertől sincs mit irigyelnie: ...új, elidegenített és hazug értékrendet hirdet, a fogyasztó társadalom értékeit. Ma az megy végbe éppen, amit Marx az élő, valódi, korábbi kultúrák megsemmisítésének nevezett...\" (Pasolini)'),
 (20, 'https://media.themoviedb.org/t/p/w300_and_h450_face/boRgts8QmRdcm7gaA43WQG8FhAS.jpg', 'Mechanikus Narancs', 'Stanley Kubrick', '1971-03-08', 'Sötét Komédia, Disztópikus Sci-Fi', '02:16:00', 'https://media.themoviedb.org/t/p/w500_and_h282_face/skyOmzgiSSH8pggZxkbZ5KhKPCz.jpg', 'Alex és bandája éjszakánként a város utcáit járja és terrorizálja. A megvadult fiatalok törnek, zúznak, rabolnak és gyilkolnak, mígnem a bandavezért a társai föl nem nyomják a zsaruknak. A börtönben Alex önként vállalkozik egy új átnevelési gyógymódra. A sajátos agymosás célja, hogy kiölje az emberből az agresszivitást. Miután a kezelést követően gyógyultnak nyilvánítják, szabadon engedik. Alex azonban életképtelenné vált a társadalomban, kiszolgáltatottja lesz egykori áldozatai bosszújának. Végül öngyilkosságot kísérel meg.'),
 (21, 'https://media.themoviedb.org/t/p/w220_and_h330_face/jnQdrbSKFYXPtsqV3EihoF1XMpS.jpg', '964 Pinocchio', 'Shozin Fukui', '1991-09-14', 'Horror, Sci-Fi', '01:37:00', 'https://media.themoviedb.org/t/p/w500_and_h282_face/ya0YqVXvrfqn7jY1rxMlLWuHRDI.jpg', 'Egy lobotomizált, defektes kiborg rabszolgát kidobtak az útcára aholo befogadja egy hajléktalan lány, persze a gyártó cég vadászik rá'),
 (22, 'https://media.themoviedb.org/t/p/w300_and_h450_face/xIjcPrMdvEtF8BQVelNb5sZja9a.jpg', 'Bőrnyakúak', 'Sam Mendes', '2005-01-05', 'Sötét Komédia, Háborús Dráma', '02:05:00', 'https://media.themoviedb.org/t/p/w500_and_h282_face/kMs0MbZyPXMycQZJhQeWfuSdzCv.jpg', 'Az önkéntes Anthony húszéves, amikor 1990 nyarán Szaúd-Arábiába küldik, hogy harcoljon az Öböl-háborúban. Közelről azonban egészen másként látja az iraki háborút, mint amilyennek azt az újságok és a televíziók bemutatják. Érzi az égő olajkutak bűzét, ott retteg a fiatal katonák között, akik nem tudják mi vár rájuk a sivatagban, átéli a támadásra készülődés unalmát, megszagolja a vér ízét, és megtapasztalja az ütközetek fizikai és pszichológiai hatását, a katonák között kialakuló összetartás érzését. Anthony Swafford könyvéből.'),
@@ -150,13 +163,13 @@ ALTER TABLE `meta_adat`
 -- AUTO_INCREMENT a táblához `felhasznalok`
 --
 ALTER TABLE `felhasznalok`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT a táblához `film_listak`
 --
 ALTER TABLE `film_listak`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT a táblához `meta_adat`
