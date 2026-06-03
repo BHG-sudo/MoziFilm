@@ -1,7 +1,4 @@
 let moviesCon = document.getElementById("moviesCon");
-for (const E of filmlist) {
-    console.log(E);
-}
 for(const E of filmlist){
     let li = document.createElement("li");
     li.id = "li"+E["id"];
